@@ -1,0 +1,31 @@
+.table {
+  width: 80%;
+  height: 50%;
+  overflow-x: scroll;
+}
+
+.grid {
+  position: absolute;
+}
+
+.grid-column {
+  height: 100%;
+}
+
+.slide-row {
+  height: 10%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: darkslategray;
+  border-radius: 10px;
+}

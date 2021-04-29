@@ -1,0 +1,47 @@
+
+<div #canvasTable class="table" (mousedown)="onScrollTable(true)" (mouseup)="onScrollTable(false)">
+
+  <canvas #gridCanvas class="grid" id="grid-canvas" height="2000" width="2000"></canvas>
+
+
+
+<!--<svg class="grid" [attr.width]="tableWidth + '%'">-->
+<!--    <defs>-->
+<!--      <pattern id="smallGrid" width="10" height="10" patternUnits="userSpaceOnUse">-->
+<!--        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="gray" stroke-width="0.5"/>-->
+<!--      </pattern>-->
+<!--      <pattern id="grid" [attr.width]="tableWidth" height="100" patternUnits="userSpaceOnUse">-->
+<!--        <rect [attr.width]="tableWidth" height="100%" fill="url(#smallGrid)"/>-->
+<!--        <path d="M 100 0 L 0 0 0 100" fill="none" stroke="gray" stroke-width="1"/>-->
+<!--      </pattern>-->
+<!--    </defs>-->
+<!--    <rect [attr.width]="tableWidth + '%'" height="100%" fill="url(#grid)" />-->
+<!--  </svg>-->
+
+  <svg [attr.width]="tableWidth + '%'" height="50%" class="slide-row">
+    <rect x="0%" y="10" height="50" width="10%"  stroke="green" stroke-width="4" fill="yellow"></rect>
+    <rect x="15%" y="10" height="50" width="10%"  stroke="green" stroke-width="4" fill="yellow"></rect>
+    <rect x="50%" y="10" height="50" width="10%"  stroke="green" stroke-width="4" fill="yellow"></rect>
+  </svg>
+  <svg [attr.width]="tableWidth + '%'" height="50%" class="slide-row">
+    <rect x="10%" y="10" height="50" width="10%"  stroke="green" stroke-width="4" fill="yellow"></rect>
+    <rect x="26%" y="10" height="50" width="5%"  stroke="red" stroke-width="4" fill="yellow"></rect>
+  </svg>
+  <svg [attr.width]="tableWidth + '%'" height="50%" class="slide-row">
+    <rect x="10%" y="10" height="50" width="10%"  stroke="green" stroke-width="4" fill="yellow"></rect>
+    <rect x="26%" y="10" height="50" width="5%"  stroke="red" stroke-width="4" fill="yellow"></rect>
+  </svg>
+  <svg [attr.width]="tableWidth + '%'" height="50%" class="slide-row">
+    <rect x="10%" y="10" height="50" width="10%"  stroke="green" stroke-width="4" fill="yellow"></rect>
+    <rect x="26%" y="10" height="50" width="5%"  stroke="red" stroke-width="4" fill="yellow"></rect>
+  </svg>
+  <app-grant-slide></app-grant-slide>
+</div>
+
+
+<input [(ngModel)]=tableWidth>
+<input [(ngModel)]=targetWidth>
+<div>
+  Smooth<mat-slide-toggle [(ngModel)]="smooth"></mat-slide-toggle>
+</div>
+<mat-slider color="warn" min="100" max="1000" step="1" tickInterval="2" (input)="onSlide($event)" [(ngModel)]=tableWidthSlider></mat-slider>
