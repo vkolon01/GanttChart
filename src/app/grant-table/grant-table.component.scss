@@ -6,6 +6,8 @@
 
 .grid {
   position: absolute;
+  z-index: -100;
+  max-height: 100%;
 }
 
 .grid-column {
@@ -14,6 +16,10 @@
 
 .slide-row {
   height: 10%;
+}
+
+.stroke {
+  stroke-width: 5px;
 }
 
 ::-webkit-scrollbar {

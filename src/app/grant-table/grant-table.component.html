@@ -3,8 +3,6 @@
 
   <canvas #gridCanvas class="grid" id="grid-canvas" height="2000" width="2000"></canvas>
 
-
-
 <!--<svg class="grid" [attr.width]="tableWidth + '%'">-->
 <!--    <defs>-->
 <!--      <pattern id="smallGrid" width="10" height="10" patternUnits="userSpaceOnUse">-->
@@ -18,23 +16,17 @@
 <!--    <rect [attr.width]="tableWidth + '%'" height="100%" fill="url(#grid)" />-->
 <!--  </svg>-->
 
-  <svg [attr.width]="tableWidth + '%'" height="50%" class="slide-row">
-    <rect x="0%" y="10" height="50" width="10%"  stroke="green" stroke-width="4" fill="yellow"></rect>
-    <rect x="15%" y="10" height="50" width="10%"  stroke="green" stroke-width="4" fill="yellow"></rect>
-    <rect x="50%" y="10" height="50" width="10%"  stroke="green" stroke-width="4" fill="yellow"></rect>
+  <svg *ngFor="let chartElements of chartElementMatrix" [attr.width]="tableWidth + '%'" height="50%" class="slide-row">
+    <rect *ngFor="let chartElement of chartElements"
+          [attr.x]="chartElement.start + '%'"
+          height="50"
+          [attr.width]="chartElement.width + '%'"
+          [attr.fill]="chartElement.fillColor ? chartElement.fillColor : 'white'"
+          [attr.stroke]="chartElement.strokeColor ? chartElement.strokeColor : 'black'"
+          stroke-width="3"
+    ></rect>
   </svg>
-  <svg [attr.width]="tableWidth + '%'" height="50%" class="slide-row">
-    <rect x="10%" y="10" height="50" width="10%"  stroke="green" stroke-width="4" fill="yellow"></rect>
-    <rect x="26%" y="10" height="50" width="5%"  stroke="red" stroke-width="4" fill="yellow"></rect>
-  </svg>
-  <svg [attr.width]="tableWidth + '%'" height="50%" class="slide-row">
-    <rect x="10%" y="10" height="50" width="10%"  stroke="green" stroke-width="4" fill="yellow"></rect>
-    <rect x="26%" y="10" height="50" width="5%"  stroke="red" stroke-width="4" fill="yellow"></rect>
-  </svg>
-  <svg [attr.width]="tableWidth + '%'" height="50%" class="slide-row">
-    <rect x="10%" y="10" height="50" width="10%"  stroke="green" stroke-width="4" fill="yellow"></rect>
-    <rect x="26%" y="10" height="50" width="5%"  stroke="red" stroke-width="4" fill="yellow"></rect>
-  </svg>
+
   <app-grant-slide></app-grant-slide>
 </div>
 
